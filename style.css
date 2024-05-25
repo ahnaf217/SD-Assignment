@@ -83,16 +83,23 @@ ul li.checked::before{
     background-image: url(images/checked.jpg);
 }
 .edit-btn{
+    position: absolute;
+    top: 5px;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
     border: none;
     outline: none;
-    padding: 6px 20px;
-    background: #bb45ff;
-    color: #fff;
-    font-size: 10px;
+    color: #8a8383;
+    font-size: 22px;
     cursor: pointer;
     border-radius: 40px;
     position: absolute;
-    right: 50px;
+    right: 40px;
+}
+.edit-btn:hover{
+    background: #989ca3;
 }
 
 ul li span{
@@ -102,13 +109,13 @@ ul li span{
     width: 40px;
     height: 40px;
     font-size: 22px;
-    color: #555;
+    color: #8a8383;
     line-height: 40px;
     text-align: center;
     border-radius: 40px;
 }
 ul li span:hover{
-    background: #edeef0;
+    background: #989ca3;
 }
 .filters{
     display: flex;

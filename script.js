@@ -16,12 +16,22 @@ function addTask(){
         deleteButton.style.cursor = 'pointer';
         
         let editButton = document.createElement("Edit");
-        editButton.innerHTML = "Edit";
+        editButton.innerHTML = "\u270E";
         editButton.className = "edit-btn";
         
         li.appendChild(editButton);
         li.appendChild(deleteButton);
-        
+
+        editButton.addEventListener("click", function(e){
+            let li = e.target.parentElement;
+            let currentText = li.firstChild.textContent;
+            let newText = prompt("Edit your task:", currentText);
+            if(newText !== null && newText !== ''){
+                li.firstChild.textContent = newText;
+                saveData();
+            }
+        });
+
         saveData();
     }
     inputBox.value = "";
@@ -35,15 +45,6 @@ listContainer.addEventListener("click", function(e){
     else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
         saveData();
-    }
-    else if(e.target.tagName === "BUTTON" && e.target.classList.contains("edit-btn")){
-        let li = e.target.parentElement;
-        let currentText = li.firstChild.textContent;
-        let newText = prompt("Edit your task:", currentText);
-        if(newText !== null && newText !== ''){
-            li.firstChild.textContent = newText;
-            saveData();
-        }
     }
 }, false);
 
